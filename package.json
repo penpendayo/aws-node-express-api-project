@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "serverless offline",
-    "start": "nodemon -e js  --exec \"sls offline\""
+    "deploy": "serverless deploy",
+    "dev": "nodemon -e js  --exec \"serverless offline\"",
+    "remove": "serverless remove"
   },
   "dependencies": {
     "@vendia/serverless-express": "^4.10.3",
