@@ -1,0 +1,24 @@
+{
+  "name": "aws-node-express-api-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "serverless offline",
+    "start": "nodemon -e js  --exec \"sls offline\""
+  },
+  "dependencies": {
+    "@vendia/serverless-express": "^4.10.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.115",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.1.0",
+    "esbuild": "^0.14.25",
+    "nodemon": "^2.0.22",
+    "serverless-esbuild": "^1.25.0",
+    "serverless-offline": "^12.0.4",
+    "typescript": "^5.0.4"
+  }
+}

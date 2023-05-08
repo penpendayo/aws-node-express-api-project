@@ -1,0 +1,32 @@
+service: aws-node-express-api-project
+frameworkVersion: '3'
+
+package:
+  individually: true
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    exclude: ['aws-sdk']
+    target: 'node14'
+    define: { 'require.resolve': undefined }
+    platform: 'node'
+    concurrency: 10
+    watch:
+      pattern: ['src/**/*.ts'] 
+      ignore: ['temp/**/*']
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: src/index.handler # 後で移動させる
+    events:
+      - httpApi: '*'
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
